@@ -74,3 +74,11 @@ class CheckerError
     @errors << error_msg
   end
 
+  def check_white_spaces
+    @checker.file_content.each_with_index do |value, index|
+      if value[-2] == ' ' &&!value.strip.empty?
+        @errors << "line:#{index + 1}:#{value.size -1}: Error: whitespace detected"
+        + " '#{value.gsub(/\s*$/, '_')}'"
+      end
+    end
+  end
