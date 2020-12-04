@@ -30,3 +30,47 @@ class CheckerError
       log_error("line:#{index + 1} Lint/Syntax: Unexpected/Missing token '#{args[3]}' #{args[4]}") if status_check.eql?(-1)
     end
   end
+
+  def check_empty_line_errors
+    @checker.file_content.each_with_index do |value, index|
+      check_class_empty_line(value, index)
+      check_def_empty_line(value, index)
+      check_end_empty_line(value, index)
+      check_do_empty_line(value, index)
+    end
+  end
+
+  def check_class_empty_line(value, index)
+    message = 'Extra Empty line detected at the beginning of the class body'
+    return unless value.strip.split(' ').first.eql?('class')
+
+    log_error("line:#{index + 2} #{message}") if @checker.file_content[index + 1].strip.empty?
+  end
+
+  def check_def_empty_line(value, index)
+    message1 ='Extra Empty line detetcted at the beginning of method body'
+    message2 = 'Use empty lines between method definition'
+
+    return unless value.strip.split(' ').first.eql?('def')
+
+    log_error("line:#{index + 2} #{message1}") if @checker.file_content[index + 1].strip.empty?
+    log_error("line:#{index + 1} #{message2}") if @checker.file_content[index - 1].strip.split(' ').first.eql?('end')
+  end
+
+  def check_end_empty_line(value, index)
+    return unless value.strip.split(' ').first.eql?('end')
+
+    log_error("line: #{index} Extra Empty line detected at block body end") if @checker.file_content[index -1].strip.empty?
+  end
+
+  def check_do_empty_line(value, index)
+    message ='Extra empty line detetced at block body beginning'
+    return unless value.strip.split(' ').include?('do')
+
+    log_error("line:#{index + 2} #{message}") if @checker.file_content[index + 1].strip.empty?
+  end
+  
+  def log_error(error_msg)
+    @errors << error_msg
+  end
+
