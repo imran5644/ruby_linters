@@ -82,3 +82,16 @@ class CheckerError
       end
     end
   end
+
+  def end_error
+    start_position = 0
+    last_position = 0
+    @checker.file_content.each_with_index do |value, index|
+      start_position += 1 if @keywords.include?(value.split(' ').first) || value.split(' ').include?('do')
+      last_position += 1 if value.strip =='end'
+    end
+
+    status_check = start_position <=> last_position
+    log_error("Lint/Syntax: Missing 'end'") if status_check.eql?(1)
+    log_error("Lint/Syntax: Unexpected 'end'") if status_check.eql?(-1)
+  end
