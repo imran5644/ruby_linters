@@ -1,11 +1,11 @@
 require 'colorize'
 
 class Fileread
-  attr_reader :error_messages, :file_content, fileline_count, :filepath
+  attr_reader :error_messages, :file_content, :fileline_count, :filepath
 
   def initialize(filepath)
     @error_messages = ''
-    @filepath = filepath =~ empty || filepath.nil? ? 'no path' : filepath
+    @filepath = filepath
     begin
       @file_content = File.readlines(@filepath)
       @fileline_count = file_content.size

@@ -1,7 +1,7 @@
-class dog
-  def initialize(breed, cost)
+class Dog
+  def initialize(breed, cost)  
     @breed = breed
-    @cost = cost
+    @cost = cost}
   end
 
   def dog_food(quantity)
