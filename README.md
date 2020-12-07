@@ -117,7 +117,7 @@ $ cd <folder>
 ```
 
 ```
-$ git clone https://github.com/sumon0002001/Ruby-Capstone-project/tree/feature-branch
+$ git clone https://github.com/imran5644/ruby_linters.git
 ```
 $ bundle install
 
