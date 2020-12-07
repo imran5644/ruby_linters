@@ -1,4 +1,3 @@
-# rubocop:disable Style/GuardClause
 require 'colorize'
 require 'strscan'
 require_relative 'file_read'
@@ -101,4 +100,3 @@ class CheckerError
     log_error("Lint/Syntax: Unexpected 'end'") if status_check.eql?(-1)
   end
 end
-# rubocop:enable Style/GuardClause

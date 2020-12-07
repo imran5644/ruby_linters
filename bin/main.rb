@@ -2,16 +2,16 @@
 require_relative '../lib/checker'
 
 check = CheckerError.new(ARGV.first)
-check.check_empty_line_error
-check.checking_white_spaces
-check.tag_error
+check.check_empty_line_errors
+check.check_white_spaces
+check.check_tag_error
 check.end_error
 
 if check.errors.empty? && check.checker.error_msg.empty?
   puts "#{'No offernses'.colorize(:green)} found"
 else
   check.errors.uniq.each do |_error|
-    puts "#{check.checker.file_path.colorize(:blue)}  : #{err.colorize(:red)}"
+    puts "#{check.checker.file_path.colorize(:blue)}  : #{error.colorize(:red)}"
   end
 end
 

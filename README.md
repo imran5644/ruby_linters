@@ -13,12 +13,13 @@ The custom Ruby linter currently checks/detects for the following errors/warning
     check missing/unexpected end
     check empty line error
 
-    Below are demonstrations of good and bad code for the above cases.
+
+Below are demonstrations of good and bad code for the above cases.
 
 ## Trailing white spaces
 
-# Good Code
-
+## Good Code
+~~~ruby
 class Dog
   def initialize(breed, cost)  
     @breed = breed
@@ -26,7 +27,7 @@ class Dog
   end  
 end
 
-# Bad Code
+## Bad Code
 
 class Dog
   def initialize(breed, cost)  
@@ -34,31 +35,31 @@ class Dog
     @cost = cost}
   end
 end
-
+~~~
 
 ## Missing/Unexpected Tag
 
-# Good Code
-
-mclass Dog
+## Good Code
+~~~ruby
+class Dog
   def initialize(breed, cost)  
     @breed = breed
     @cost = cost
   end
 end
 
-# Bad Code
+## Bad Code
 
 class Dog
   def initialize(breed, cost)  
     @breed = breed  
     @cost = cost}
   end
-
+~~~
 ## Missing/unexpected end
 
-# Good Code
-
+## Good Code
+~~~ruby
 class Dog
   def initialize(breed, cost)  
     @breed = breed
@@ -66,18 +67,18 @@ class Dog
   end
  end
 
-# Bad Code
+## Bad Code
 class Dog
   def initialize(breed, cost)  
     @breed = breed
     @cost = cost
   end
-
+~~~
 
 ## Empty line error
 
-# Good Code
-
+## Good Code
+~~~ruby
 class Dog
   def initialize(breed, cost)  
     @breed = breed
@@ -89,8 +90,8 @@ class Dog
     end
 end
 end
-# Bad Code
-mclass Dog
+## Bad Code
+class Dog
   def initialize(breed, cost)  
     @breed = breed
     @cost = cost
@@ -102,7 +103,7 @@ mclass Dog
     end
 end
 end
-
+~~~
 ## Built With
 - Ruby
 - RSpec for Ruby Testing
@@ -112,19 +113,20 @@ end
 
 To get a local copy of the repository please run the following commands on your terminal:
 
-```
-$ cd <folder>
-```
 
-```
+$ cd <folder>
+
+
+
 $ git clone https://github.com/imran5644/ruby_linters.git
-```
+
 $ bundle install
 
 To run local copy of the repository please run the following commands on your terminal:
 
-~~~bash
-$  main test.rb
+~~bash
+$  ruby test.rb
+
 
 ## Testing
 
@@ -134,9 +136,7 @@ To test the code, run rspec from root of the folder using terminal. Note: bug.rb
 
     But before that, make sure you have bundler installed on your system, else run
 
-$ gem install bundler 
-
-    or you simply install the the following directly using
+$ gem install bundler or you simply install the the following directly using
 
 $ gem install rspec 
 
@@ -144,22 +144,33 @@ $ gem install colorize
 
 $ run rspec
 
-# Author
 
-bust_in_silhouette Mir Rawshan Ali
+## Authors
 
-    Github: @imran5644
-    Twitter: @imran5644
-    Linkedin: Imran Yousaf
+👤 **Imran Yousaf** 
 
-## handshake Contributing
+- Github: [@imran5644](https://github.com/imran5644)
+- Twitter: [@imran56444](https://twitter.com/imran56444)
+- Linkedin: [Imran Yousaf](https://www.linkedin.com/in/imran-yousaf-8777297b/)
 
-Contributions, issues and feature requests are welcome!
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/NataJenkins/TicTacToe/issues).
 
 ## Show your support
 
-Give a star if you like this project!
+Give a ⭐️ if you like this project!
 
+## Acknowledgments
+
+- The Odin Project[https://www.theodinproject.com/courses/ruby-programming/]
+
+## 📝 License
+
+This project is [MIT](lic.url) licensed.
 ## Acknowledgments
 
 Project inspired by Microverse
