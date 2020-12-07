@@ -77,7 +77,7 @@ class CheckerError
   def check_white_spaces
     @checker.file_content.each_with_index do |value, index|
       if value[-2] == ' ' &&!value.strip.empty?
-        @errors << "line:#{index + 1}:#{value.size -1}: Error: whitespace detected"
+        @errors << "line:#{index + 1}:#{value.size - 1}: Error: whitespace detected"
         + " '#{value.gsub(/\s*$/, '_')}'"
       end
     end
@@ -95,3 +95,4 @@ class CheckerError
     log_error("Lint/Syntax: Missing 'end'") if status_check.eql?(1)
     log_error("Lint/Syntax: Unexpected 'end'") if status_check.eql?(-1)
   end
+  

@@ -8,7 +8,7 @@ class Fileread
     @filepath = filepath =~ empty || filepath.nil? ? 'no path' : filepath
     begin
       @file_content = File.readlines(@filepath)
-      @fileline_count =file_content.size
+      @fileline_count = file_content.size
     rescue StandardError => e
       @file_content = []
       @error_messages = "No such file or path found\n".colorize(:light_red) + e.to_s.colorize(:red)

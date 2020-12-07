@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-require_relative '../lib/checker.rb'
+require_relative '../lib/checker'
 
 check = CheckerError.new(ARGV.first)
 check.check_empty_line_error
@@ -8,10 +8,10 @@ check.tag_error
 check.end_error
 
 if check.errors.empty? && check.checker.error_msg.empty?
-  puts 'No offernses'.colorize(:green) + ' found'
+  puts "#{'No offernses'.colorize(:green)} found"
 else
-  check.errors.uniq.each do |error|
-    puts"#{check.checker.file_path.colorize(:blue)}  : #{err.colorize(:red)}"
+  check.errors.uniq.each do |_error|
+    puts "#{check.checker.file_path.colorize(:blue)}  : #{err.colorize(:red)}"
   end
 end
 
