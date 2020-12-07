@@ -23,6 +23,3 @@ PLATFORMS
 DEPENDENCIES
   colorize
   rspec
-
-BUNDLED WITH
-   2.1.4
